@@ -1,0 +1,16 @@
+.board {
+    &__container {
+        width: 410px;
+        position: absolute;
+        top: 145px;
+        bottom: 65px;
+        margin: auto;
+        left: 5%;
+        color: $color-white;
+        text-align: center;
+        max-height: calc(100vh - 210px);
+        background-color: $color-primary-dark;
+        border-radius: 5px;
+        z-index: 999;
+    }
+}

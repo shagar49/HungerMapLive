@@ -1,0 +1,49 @@
+.header {
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 1rem;
+
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%;
+    }
+}
+.menu{
+display: flex; 
+align-items:center;
+justify-content: space-between;
+width: 100%;
+background-color: black;
+padding: 0;
+    &__item{
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        color: $color-white;
+        padding: 10px 25px;
+        margin: 0;
+        cursor: pointer;
+            &:hover {
+                color: $color-grey-dark-2 !important;
+        }
+    }
+    &__title{
+        margin: 0;
+        &__active{
+            display: flex;
+            color: $color-white;
+            background-color: $color-primary;
+            &:hover{
+                color: $color-white !important;
+            }
+        }
+    }
+    &__icon{
+        // color: white;
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        &:hover {
+                color: $color-grey-dark-2 !important;
+            }
+    }
+}
