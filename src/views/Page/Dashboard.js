@@ -8,20 +8,23 @@ function Dashboard({ country }) {
 
     const { data, error, isLoading } = useFetchInfoQuery();
 
-    let info;
+let info;
 
-    if (isLoading) {
-        info = <h4>Info : Loading ...</h4>
-    } else if (error) {
-        info = <h4>Total Population Count : Not Found</h4>
-    } else {
-        const result = data.countries.filter(x => x.country.name == country);
-        if (result.length > 0 && result[0].malnutrition) {
-            const { acute_percent, chronic_percent } = result[0].malnutrition
-            const res = [{ id: 'Acute', value: acute_percent }, { id: 'Chronic', value: chronic_percent }]
-            info = <PieChart data={res} />
-        }
+  if (isLoading) {
+    info = <h4>Info: Loading...</h4>;
+  } else if (error) {
+    info = <h4>Total Population Count: Not Found</h4>;
+  } else {
+    const result = data?.countries?.filter(x => x.country.name === country);
+    if (result && result.length > 0 && result[0].malnutrition) {
+      const { acute_percent, chronic_percent } = result[0].malnutrition;
+      const res = [
+        { id: 'Acute', value: acute_percent },
+        { id: 'Chronic', value: chronic_percent }
+      ];
+      info = <PieChart data={res} />;
     }
+  }
 
     return (
         <div className='board__container'>

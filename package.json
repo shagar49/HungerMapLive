@@ -1,5 +1,4 @@
 {
-  "homepage": "https://shagar49.github.io/HungerMapLive",
   "name": "hunger-map",
   "version": "0.1.0",
   "private": true,
@@ -32,7 +31,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "build": "CI=false && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -53,5 +52,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
