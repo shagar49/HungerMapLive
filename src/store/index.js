@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { foodSecApi } from './apis/foodSecApi';
+import { headerReducer, headerChange } from './slice/headerSlice';
+
 
 export const store = configureStore({
     reducer: {
+        header: headerReducer,
         [foodSecApi.reducerPath]: foodSecApi.reducer,
     },
     middleware: (getDefaultMiddleware) => {
@@ -15,3 +18,4 @@ export const store = configureStore({
 setupListeners(store.dispatch)
 
 export { useFetchIPCQuery, useFetchInfoQuery, useFetchHazardQuery } from './apis/foodSecApi'
+export { headerChange }

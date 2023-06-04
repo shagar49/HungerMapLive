@@ -47,3 +47,12 @@ body {
     color: $color-grey-dark-2;
     min-height: 100vh;
 }
+
+.title {
+    &__primary {
+        color: $color-grey-dark-3;
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+}

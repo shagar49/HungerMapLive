@@ -2,6 +2,10 @@
     &__container {
         width: 410px;
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
         top: 145px;
         bottom: 65px;
         margin: auto;
@@ -12,5 +16,11 @@
         background-color: $color-primary-dark;
         border-radius: 5px;
         z-index: 999;
+
+        &__graph {
+            position: relative;
+            width: 100%;
+            height: 80%;
+        }
     }
 }

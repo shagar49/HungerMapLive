@@ -1,9 +1,10 @@
 import { ResponsivePie } from '@nivo/pie'
-
-function BarGraph({ data }) {
-    return (<>
+import { theme } from './theme';
+function PieChart({ data }) {
+    return (
         <ResponsivePie
             data={data}
+            theme={theme}
             margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
             innerRadius={0.5}
             padAngle={0.7}
@@ -21,7 +22,7 @@ function BarGraph({ data }) {
                 ]
             }}
             arcLinkLabelsSkipAngle={10}
-            arcLinkLabelsTextColor="#333333"
+            arcLinkLabelsTextColor="#ffffff"
             arcLinkLabelsThickness={2}
             arcLinkLabelsColor={{ from: 'color' }}
             arcLabelsSkipAngle={10}
@@ -30,7 +31,7 @@ function BarGraph({ data }) {
                 modifiers: [
                     [
                         'darker',
-                        2
+                        10
                     ]
                 ]
             }}
@@ -57,13 +58,13 @@ function BarGraph({ data }) {
             fill={[
                 {
                     match: {
-                        id: 'acute_percent'
+                        id: 'acute'
                     },
                     id: 'dots'
                 },
                 {
                     match: {
-                        id: 'chronic_percent'
+                        id: 'chronic'
                     },
                     id: 'dots'
                 },
@@ -95,7 +96,7 @@ function BarGraph({ data }) {
             ]}
         />
 
-    </>)
+    )
 }
 
-export default BarGraph;
+export default PieChart;
