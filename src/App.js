@@ -30,7 +30,7 @@ function App() {
           <Menu />
         </nav>
         <main className='app__dashboard'>
-          <Dashboard country={country} />
+          <Dashboard country={country.id} />
         </main>
         <main className='app__map'>
           <Map onClick={handleCountryChange} />

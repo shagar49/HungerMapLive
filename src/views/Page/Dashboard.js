@@ -5,6 +5,7 @@ import PieChart from '../Graphs/PieChart';
 
 
 function Dashboard({ country }) {
+
     const { data, error, isLoading } = useFetchInfoQuery();
 
     let info;

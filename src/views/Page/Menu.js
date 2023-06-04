@@ -6,6 +6,8 @@ import { BiCloudLightning } from "react-icons/bi";
 import { useDispatch, useSelector } from 'react-redux';
 import { headerChange } from '../../store';
 
+// import PieChart from '../Graphs/PieChart';
+
 
 function Menu() {
   const dispatch = useDispatch()
@@ -37,6 +39,14 @@ function Menu() {
           <span>Climate / Hazards</span>
         </li>
       </ul>
+      <div className='legend'>
+        <span style={{ marginBottom: '10px' }}>Integrated Food Security Phase Classification</span>
+        <div className='legend__container'>
+          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#22c1c3' }}></div><span>1 -2</span></div>
+          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#f9bc30' }}></div><span>3 - 4</span></div>
+          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#dd0a43' }}></div> <span>4 - 5</span></div>
+        </div>
+      </div>
     </nav>
   )
 }

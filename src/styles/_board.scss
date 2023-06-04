@@ -6,14 +6,13 @@
         flex-direction: column;
         align-items: center;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-        top: 145px;
-        bottom: 65px;
+        top: 0;
+        bottom: 0;
         margin: auto;
-        left: 5%;
         color: $color-white;
         text-align: center;
         max-height: calc(100vh - 210px);
-        background-color: $color-primary-dark;
+        // background-color: $color-primary-dark;
         border-radius: 5px;
         z-index: 999;
     }
