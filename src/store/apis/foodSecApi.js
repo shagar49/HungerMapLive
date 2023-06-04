@@ -14,10 +14,26 @@ const foodSecApi = createApi({
                         method: 'GET',
                     }
                 }
+            }),
+            fetchInfo: builder.query({
+                query: (country) => {
+                    return {
+                        url: 'v2/info/country',
+                        method: 'GET',
+                    }
+                }
+            }),
+            fetchHazard: builder.query({
+                query: (country) => {
+                    return {
+                        url: 'v1/climate/hazards',
+                        method: 'GET',
+                    }
+                }
             })
         }
     }
 })
 
-export const { useFetchIPCQuery } = foodSecApi;
+export const { useFetchIPCQuery, useFetchHazardQuery, useFetchInfoQuery } = foodSecApi;
 export { foodSecApi };
