@@ -6,13 +6,12 @@ import Menu from './views/Page/Menu'
 import Dashboard from './views/Page/Dashboard'
 
 function App() {
-  const [admin, setAdmin] = useState()
-  const [active, setActive] = useState(false)
+  const [admin, setAdmin] = useState("Niger")
 
   const handleClick = (e) => {
     setAdmin(e)
-    setActive(true)
   }
+
   useEffect(() => {
     console.log('Data:', admin);
   }, [admin]);
@@ -24,7 +23,7 @@ function App() {
         <Menu />
       </header>
       <section>
-        <Dashboard active={active} country={admin} />
+        <Dashboard country={admin} />
       </section>
       <Map onClick={handleClick} />
     </section>

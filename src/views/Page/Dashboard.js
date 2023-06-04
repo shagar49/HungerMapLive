@@ -4,7 +4,7 @@ import { useFetchInfoQuery } from '../../store'
 import BarGraph from '../Graphs/BarGraph';
 
 
-function Dashboard({ active, country }) {
+function Dashboard({ country }) {
     const { data, error, isLoading } = useFetchInfoQuery();
 
     let info;
@@ -15,8 +15,9 @@ function Dashboard({ active, country }) {
         info = <h4>Total Population Count : Not Found</h4>
     } else {
         const result = data.countries.filter(x => x.country.name == country);
-        info = <BarGraph data={result[0].malnutrition} />
-        console.log(result[0].malnutrition)
+        if (result.length > 0 && result[0].malnutrition) {
+            info = <BarGraph data={result[0].malnutrition} />
+        }
     }
 
     return (
@@ -24,7 +25,7 @@ function Dashboard({ active, country }) {
             <h3>{country || 'Dashboard'}</h3>
             <div className='board__graph'>{info}</div>
             <div className='board__population'>
-                {active && <Population country={country} />}
+                <Population country={country} />
             </div>
         </div>
     )

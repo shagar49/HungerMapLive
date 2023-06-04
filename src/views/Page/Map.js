@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MapContainer, TileLayer, Polygon, Tooltip } from 'react-leaflet';
 import { africa_shape } from '../Graphs/africa'
 
@@ -7,6 +7,12 @@ import 'leaflet/dist/leaflet.css'
 const position = [1.9422957087636317, -27.91002939455943]
 
 function Map({ onClick }) {
+    const [activePolygon, setActivePolygon] = useState(['Niger', '#F09536'])
+
+    const handleClick = (e) => {
+        onClick(e)
+        setActivePolygon([e, '#F09536'])
+    }
     return (
         <section className='map__container'>
             <MapContainer dragging={false} center={position} zoom={3} className='map' style={{ width: '100vw', height: '90vh' }} scrollWheelZoom={false} zoomControl={false}>
@@ -16,13 +22,13 @@ function Map({ onClick }) {
                 />
                 {africa_shape.features.map((country) => {
                     const coordinates = country.geometry.coordinates[0].map((item) => [item[1], item[0]]);
-                    const {admin} = country.properties
+                    const { admin } = country.properties
 
                     return (
                         <Polygon
                             key={admin}
                             pathOptions={{
-                                fillColor: 'rgb(24,140,179)',
+                                fillColor: activePolygon[0] == admin ? activePolygon[1] : 'rgb(24,140,179)',
                                 fillOpacity: 0.7,
                                 weight: 1,
                                 opacity: 1,
@@ -43,24 +49,13 @@ function Map({ onClick }) {
                                 mouseout: (e) => {
                                     const layer = e.target;
                                     layer.setStyle({
-                                        fillColor: 'rgb(24,140,179)',
                                         fillOpacity: 0.7,
                                         weight: 1,
                                         dashArray: 0,
                                         color: 'black',
                                     })
                                 },
-                                click: (e) => {
-                                    onClick(admin)
-                                    const layer = e.target;
-                                    layer.setStyle({
-                                        fillColor: '#F09536',
-                                        fillOpacity: 5,
-                                        weight: 1,
-                                        dashArray: 0,
-                                        color: 'black',
-                                    })
-                                },
+                                click: () => handleClick(admin),
                             }}
                         >
                             <Tooltip sticky={true} className="map__tooltip" direction="top" offset={[1, 1]} >
