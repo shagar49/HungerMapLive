@@ -1,16 +1,18 @@
 import { ResponsiveBar } from '@nivo/bar'
 
-const BarChart = ({ data }) => (
+export const Bump = ({ data }) => (
     <ResponsiveBar
         data={data}
         keys={[
-            'Phase_3',
-            'Phase_4',
-            'Phase_5'
+            'fcs',
+            'rcsi',
+            'healthAccess',
+            'marketAccess',
         ]}
         indexBy="country"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.3}
+        groupMode="grouped"
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={{ scheme: 'nivo' }}
@@ -37,13 +39,13 @@ const BarChart = ({ data }) => (
         fill={[
             {
                 match: {
-                    id: 'phase_3'
+                    id: 'fries'
                 },
                 id: 'dots'
             },
             {
                 match: {
-                    id: 'phase_4'
+                    id: 'sandwich'
                 },
                 id: 'lines'
             }
@@ -115,5 +117,3 @@ const BarChart = ({ data }) => (
         barAriaLabel={e => e.id + ": " + e.formattedValue + " in country: " + e.indexValue}
     />
 )
-
-export default BarChart;

@@ -54,5 +54,47 @@ body {
         font-size: 24px;
         font-weight: 400;
     }
+}
 
+.app {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: $bp-medium) {
+        // order: 1;
+        flex-direction: column;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__header {
+        @media only screen and (max-width: $bp-medium) {
+            // order: 1;
+        }
+    }
+
+    &__menu {
+        align-self: stretch;
+
+        @media only screen and (max-width: $bp-medium) {
+            // flex: 0 0 18%;
+        }
+    }
+
+    &__dashboard {
+        @media only screen and (max-width: $bp-medium) {
+            // order: 0;
+        }
+    }
+
+    &__map {
+        flex-grow: 1;
+
+        @media only screen and (max-width: $bp-medium) {
+            order: 3;
+            flex-grow: 3;
+        }
+    }
 }

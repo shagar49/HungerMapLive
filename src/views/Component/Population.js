@@ -1,5 +1,6 @@
 import React from 'react'
 import { useFetchIPCQuery } from '../../store'
+import { Bump } from '../Graphs/Bump';
 
 function Population({ country }) {
 
@@ -14,7 +15,9 @@ function Population({ country }) {
     } else {
         const result = data.ipc_peaks.filter(x => x.country_name == country);
         const populationCount = result.length > 0 ? (result[0].analyzed_population_number / 1000000).toFixed(2) + 'M' : 'N/A';
-        population = <h4>Total Population Count : {populationCount}</h4>;
+        population = (<><h4>Total Population Count : {populationCount}</h4>
+
+        </>)
 
     }
 

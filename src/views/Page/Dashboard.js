@@ -17,8 +17,8 @@ function Dashboard({ country }) {
         const result = data.countries.filter(x => x.country.name == country);
         if (result.length > 0 && result[0].malnutrition) {
             const { acute_percent, chronic_percent } = result[0].malnutrition
-            const data = [{ id: 'Acute', value: acute_percent }, { id: 'Chronic', value: chronic_percent }]
-            info = <PieChart data={data} />
+            const res = [{ id: 'Acute', value: acute_percent }, { id: 'Chronic', value: chronic_percent }]
+            info = <PieChart data={res} />
         }
     }
 
