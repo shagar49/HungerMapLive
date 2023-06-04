@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/HungerMapLive/static/css/main.4893ba39.css",
+    "main.js": "/HungerMapLive/static/js/main.a25dee23.js",
+    "index.html": "/HungerMapLive/index.html",
+    "main.4893ba39.css.map": "/HungerMapLive/static/css/main.4893ba39.css.map",
+    "main.a25dee23.js.map": "/HungerMapLive/static/js/main.a25dee23.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4893ba39.css",
+    "static/js/main.a25dee23.js"
+  ]
+}
