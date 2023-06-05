@@ -2,10 +2,6 @@
   background-color: $color-primary;
   color: $color-white;
   padding: 1rem;
-
-  @media only screen and (max-width: $bp-large) {
-    // font-size: 50%;
-  }
 }
 
 .menu {
@@ -67,11 +63,9 @@
     margin: 0;
     cursor: pointer;
     position: relative;
-
-    &:not(:last-child) {
-      margin-bottom: 0.5rem;
+    @media only screen and (max-width: $bp-medium) {
+      padding: 0rem;
     }
-
     &:first-child::before {
       transform-origin: top;
     }

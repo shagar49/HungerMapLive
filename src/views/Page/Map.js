@@ -51,6 +51,7 @@ function Map({ onClick }) {
         scrollWheelZoom={true}
         zoomControl={false}
       >
+        //Canvas layer leaflet
         <TileLayer
           url="https://api.mapbox.com/styles/v1/shagar49/clifkgrew003301qp62i773my/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2hhZ2FyNDkiLCJhIjoiY2xpZmI2ZjJiMGRzdzNrc2U1NGp3YmJiYSJ9.Egq0DyLMnUGTOgJyiqvZSw"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
