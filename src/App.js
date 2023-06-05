@@ -6,16 +6,17 @@ import Menu from './views/Page/Menu';
 import Dashboard from './views/Page/Dashboard';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCountry } from './store';
+import { africa_shape } from './views/Graphs/africa';
 
 
 function App() {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.country);
-
+  const africaMap = africa_shape.features.map((feature) => feature.properties.admin);
   const handleCountryChange = (selectedCountry) => {
     dispatch(changeCountry(selectedCountry))
   };
-
+  
   useEffect(() => {
 
   }, [country]);
@@ -33,7 +34,7 @@ function App() {
           <Dashboard country={country.id} />
         </main>
         <main className='app__map'>
-          <Map onClick={handleCountryChange} />
+          <Map africaMap={africaMap} onClick={handleCountryChange} />
         </main>
       </main>
     </div>
