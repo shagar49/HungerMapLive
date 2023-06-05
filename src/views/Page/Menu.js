@@ -22,29 +22,37 @@ function Menu() {
           onClick={() => handleClick(0)}
           className={`menu__item ${header === 0 ? "menu__title__active" : ""}`}
         >
-          <BiInfoCircle alt="Icon 1" className="menu__icon" />
-          <span>Country Information</span>
+          <a href="#" className="menu__label">
+            <BiInfoCircle alt="Icon 1" className="menu__icon" />
+            <span>Country Information</span>
+          </a>
         </li>
         <li
           onClick={() => handleClick(1)}
           className={`menu__item ${header === 1 ? "menu__title__active" : ""}`}
         >
-          <BiIntersect alt="Icon 2" className="menu__icon" />
-          <span>Integrated Food Security Phase Classification</span>
+          <a href="#" className="menu__label">
+            <BiIntersect alt="Icon 2" className="menu__icon" />
+            <span>Integrated Food Security Phase Classification</span>
+          </a>
         </li>
         <li
           onClick={() => handleClick(2)}
           className={`menu__item ${header === 2 ? "menu__title__active" : ""}`}
         >
-          <BiFork alt="Icon 3" className="menu__icon" />
-          <span>Food Consumption Score (FCP)</span>
+          <a href="#" className="menu__label">
+            <BiFork alt="Icon 3" className="menu__icon" />
+            <span>Food Consumption Score (FCP)</span>
+          </a>
         </li>
         <li
           onClick={() => handleClick(3)}
           className={`menu__item ${header === 3 ? "menu__title__active" : ""}`}
         >
-          <BiCloudLightning alt="Icon 4" className="menu__icon" />
-          <span>Climate / Hazards</span>
+          <a href="#" className="menu__label">
+            <BiCloudLightning alt="Icon 4" className="menu__icon" />
+            <span>Climate / Hazards</span>
+          </a>
         </li>
       </ul>
       {header != 0 && (
