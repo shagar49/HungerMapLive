@@ -41,8 +41,11 @@
         cursor: pointer;
 
         @media only screen and (max-width: $bp-large) {
-            // font-size: 50%;
+            font-size: 90%;
             // flex-direction: column;
+        }
+        @media only screen and (max-width: $bp-small) {
+            padding: 0;
         }
 
         &:hover {
@@ -70,52 +73,5 @@
         margin-right: 10px;
         width: 30px;
         height: 30px;
-    }
-}
-
-.legend {
-    margin-top: 10rem;
-    margin-left: 2rem;
-    align-items: start;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    &>span {
-        font-size: 12px;
-        color: #fff;
-        margin-bottom: 18px;
-    }
-
-    @media only screen and (max-width: $bp-large) {
-        display: none;
-    }
-}
-
-.legend__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.rectangle {
-    width: 200px;
-    height: 20px;
-    margin-bottom: 10px;
-    display: flex;
-    margin-right: 20px;
-    align-items: center;
-    font-weight: bold;
-    color: white;
-
-    &__container {
-
-        height: 20px;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-around;
-        font-weight: bold;
-        color: white;
     }
 }

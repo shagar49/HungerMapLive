@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { MapContainer, TileLayer, Polygon, Tooltip } from 'react-leaflet';
 import { africa_shape } from '../Graphs/africa'
 
@@ -13,9 +13,22 @@ function Map({ onClick }) {
         onClick(e)
         setActivePolygon([e, '#F09536'])
     }
+    
+//Handles Zoom Level of the map
+  const handleZoom = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth <= 768) {
+        // Tablet or smaller screens
+        return true
+      } else {
+        // Larger screens
+        return false
+      }
+  }
+  console.log(handleZoom())
     return (
         <section className='map__container'>
-            <MapContainer dragging={false} center={position} zoom={3} className='map' scrollWheelZoom={false} zoomControl={false}>
+            <MapContainer dragging={false} center={position} zoom={handleZoom() ? 2 : 3} className='map' scrollWheelZoom={true} zoomControl={false}>
                 <TileLayer
                     url="https://api.mapbox.com/styles/v1/shagar49/clifkgrew003301qp62i773my/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2hhZ2FyNDkiLCJhIjoiY2xpZmI2ZjJiMGRzdzNrc2U1NGp3YmJiYSJ9.Egq0DyLMnUGTOgJyiqvZSw"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

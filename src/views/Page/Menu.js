@@ -42,9 +42,9 @@ function Menu() {
       <div className='legend'>
         <span style={{ marginBottom: '10px' }}>Integrated Food Security Phase Classification</span>
         <div className='legend__container'>
-          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#22c1c3' }}></div><span>1 -2</span></div>
-          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#f9bc30' }}></div><span>3 - 4</span></div>
-          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#dd0a43' }}></div> <span>4 - 5</span></div>
+          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#22c1c3' }}></div><span className='legend__labels'>1 -2</span></div>
+          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#f9bc30' }}></div><span className='legend__labels'>3 - 4</span></div>
+          <div className="rectangle__container"><div className="rectangle" style={{ backgroundColor: '#dd0a43' }}></div> <span className='legend__labels'>4 - 5</span></div>
         </div>
       </div>
     </nav>

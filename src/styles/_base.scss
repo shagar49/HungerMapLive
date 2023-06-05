@@ -8,8 +8,6 @@ $color-grey-dark-1: #333;
 $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
 
-$color-secondary-light :#ffb900;
-$color-secondary-dark :#ff7730;
 
 $bp-largest :75em; //1200px
 $bp-large :68.75rem; //1100px
@@ -89,8 +87,8 @@ body {
     }
 
     &__dashboard {
-        @media only screen and (max-width: $bp-medium) {
-            // order: 0;
+        @media only screen and (max-width: $bp-small) {
+            display: none;
         }
     }
 
