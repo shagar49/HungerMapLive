@@ -17,7 +17,7 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('Selected Country:', country);
+
   }, [country]);
 
   return (
